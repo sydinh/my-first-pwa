@@ -47,17 +47,13 @@
   <script src="./js/built-in.js" type="text/babel"></script>
 
   <script>
-    // Register a serviceWorker
     if ('serviceWorker' in navigator) {
-      // console.log('serviceWorker existing')
       window.addEventListener('load', () => {
         navigator.serviceWorker.register('./service-worker.js')
           .then((registration) => {
-            // console.log('ServiceWorker Registration successful')
             console.log(`ServiceWorker Registration successful with scope: ${registration.scope}`)
           })
           .catch((error) => {
-            // console.log('ServiceWorker Registration failed')
             console.log(`ServiceWorker Registration failed: ${error}`)
           });
       })
