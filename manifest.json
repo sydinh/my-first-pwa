@@ -3,7 +3,7 @@
   "name": "My First Progressive Web App",
   "description": "Get started with Progressive Web App",
   "scope": ".",
-  "start_url": "./offline.html",
+  "start_url": "./offline-page.html",
   "display": "standalone",
   "orientation": "portrait",
   "background_color": "#666633",

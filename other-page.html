@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <!--
+    This tag provides a short description of the page.
+    In some situations this description is used as a part of the snippet shown in the search results.
+  -->
+  <meta name="description" content="My First Progressive Web App">
+
+  <!--
+    Address Bar Matches Brand Colors.
+    See https://developers.google.com/web/tools/lighthouse/audits/address-bar
+  -->
+  <meta name="theme-color" content="#666699">
+
+  <title>My First Progressive Web App</title>
+
+  <!--
+    manifest.json provides metadata used when your web app is added to the
+    homescreen on Android.See https://developers.google.com/web/fundamentals/web-app-manifest/
+  -->
+  <link rel="manifest" href="./manifest.json">
+  <link rel="icon" type="image/png" href="./images/favicon.png">
+
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+
+  <link rel="stylesheet" href="./css/built-in.css">
+  <link rel="stylesheet" href="./css/built-in-other-page.css">
+</head>
+
+<body>
+
+  <noscript>
+    This example using JavaScript to implement some cool features. Enable JavaScript to see all things work.
+  </noscript>
+
+  <!-- app entrance -->
+  <main id="hello-pwa"></main>
+  <p>This is other-page.</p>
+  <a href="./offline-page.html">go to offline-page</a>
+
+  <script src="./js/babel.js"></script>
+  <script src="./js/react.development.js"></script>
+  <script src="./js/react-dom.development.js"></script>
+
+  <script src="./js/built-in.js" type="text/babel"></script>
+
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('./service-worker.js')
+          .then((registration) => {
+            console.log(`ServiceWorker Registration successful with scope: ${registration.scope}`)
+          })
+          .catch((error) => {
+            console.log(`ServiceWorker Registration failed: ${error}`)
+          });
+      })
+    }
+  </script>
+
+</body>
+
+</html>

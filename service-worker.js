@@ -1,7 +1,8 @@
-const CACHE_NAME = 'pwa-cache-v1';
+const CACHE_NAME = 'my-first-pwa-cache-v1';
 const urlsToCache = [
   './',
   './css/built-in.css',
+  './css/built-in-offline-page.css',
   './js/babel.js',
   './js/react.development.js',
   './js/react-dom.development.js',
@@ -43,7 +44,10 @@ self.addEventListener('fetch', (event) => {
 
 // Update service worker
 self.addEventListener('activate', (event) => {
-  const cacheWhitelist = ['pwa-foo-cache-v1', 'pwa-bar-cache-v1'];
+  const cacheWhitelist = [
+    'my-first-pwa-cache-v1-foo',
+    'my-first-pwa-cache-v1-bar',
+  ];
 
   event.waitUntil(
     caches.keys().then((cacheNames) => {
