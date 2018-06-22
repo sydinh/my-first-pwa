@@ -1,0 +1,43 @@
+{
+  "short_name": "Progressive Web App",
+  "name": "My First Progressive Web App",
+  "description": "Get started with Progressive Web App",
+  "scope": ".",
+  "start_url": "./offline.html",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#666633",
+  "theme_color": "#339966",
+  "icons": [
+    {
+      "src": "images/ic_launcher/res/mipmap-mdpi/ic_launcher.png",
+      "type": "image/png",
+      "sizes": "48x48"
+    },
+    {
+      "src": "images/ic_launcher/res/mipmap-hdpi/ic_launcher.png",
+      "type": "image/png",
+      "sizes": "72x72"
+    },
+    {
+      "src": "images/ic_launcher/res/mipmap-xhdpi/ic_launcher.png",
+      "type": "image/png",
+      "sizes": "96x96"
+    },
+    {
+      "src": "images/ic_launcher/res/mipmap-xxhdpi/ic_launcher.png",
+      "type": "image/png",
+      "sizes": "144x144"
+    },
+    {
+      "src": "images/ic_launcher/res/mipmap-xxxhdpi/ic_launcher.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "images/ic_launcher/web_hi_res_512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ]
+}
