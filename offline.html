@@ -28,6 +28,7 @@
   <link rel="icon" type="image/png" href="./images/favicon.png">
 
   <link rel="stylesheet" href="./css/built-in.css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 </head>
 
 <body>
@@ -37,9 +38,9 @@
   </noscript>
 
   <!-- app entrance -->
-  <main id="root"></main>
+  <main id="hello-pwa"></main>
 
-  <script src="./js/babel.min.js"></script>
+  <script src="./js/babel.js"></script>
   <script src="./js/react.development.js"></script>
   <script src="./js/react-dom.development.js"></script>
 
@@ -51,12 +52,14 @@
       // console.log('serviceWorker existing')
       window.addEventListener('load', () => {
         navigator.serviceWorker.register('./service-worker.js')
-        .then((response) => {
-          console.log(`ServiceWorker Registration successfully with scope: ${response.scope}`)
-        })
-        .catch((error) => {
-          console.log(`ServiceWorker Registration failed: ${error}`)
-        });
+          .then((registration) => {
+            // console.log('ServiceWorker Registration successful')
+            console.log(`ServiceWorker Registration successful with scope: ${registration.scope}`)
+          })
+          .catch((error) => {
+            // console.log('ServiceWorker Registration failed')
+            console.log(`ServiceWorker Registration failed: ${error}`)
+          });
       })
     }
   </script>

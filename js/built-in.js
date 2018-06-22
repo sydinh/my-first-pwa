@@ -1,4 +1,4 @@
-const root = document.getElementById('root');
+const root = document.getElementById('hello-pwa');
 
 class HelloPWA extends React.Component {
   render() {
