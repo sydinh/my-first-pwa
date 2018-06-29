@@ -18,6 +18,26 @@ self.addEventListener('install', (event) => {
   );
 });
 
+// Update service worker
+self.addEventListener('activate', (event) => {
+  const cacheWhitelist = [
+    'my-first-pwa-cache-v1-foo',
+    'my-first-pwa-cache-v1-bar',
+  ];
+
+  event.waitUntil(
+    caches.keys().then((cacheNames) => {
+      return Promise.all(
+        cacheNames.map((cacheName) => {
+          if (cacheWhitelist.indexOf(cacheName) === -1) {
+            return caches.delete(cacheName);
+          }
+        }),
+      );
+    }),
+  );
+});
+
 // Cache and return requests
 self.addEventListener('fetch', (event) => {
   event.respondWith(
@@ -38,26 +58,6 @@ self.addEventListener('fetch', (event) => {
 
         return response;
       });
-    }),
-  );
-});
-
-// Update service worker
-self.addEventListener('activate', (event) => {
-  const cacheWhitelist = [
-    'my-first-pwa-cache-v1-foo',
-    'my-first-pwa-cache-v1-bar',
-  ];
-
-  event.waitUntil(
-    caches.keys().then((cacheNames) => {
-      return Promise.all(
-        cacheNames.map((cacheName) => {
-          if (cacheWhitelist.indexOf(cacheName) === -1) {
-            return caches.delete(cacheName);
-          }
-        }),
-      );
     }),
   );
 });
